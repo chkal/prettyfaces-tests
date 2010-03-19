@@ -10,17 +10,17 @@
   </application>
 
   <managed-bean>
-    <managed-bean-name>helloWorldBacking</managed-bean-name>
+    <managed-bean-name>welcomeBean</managed-bean-name>
     <managed-bean-class>
-      de.chkal.prettytest.HelloWorldBacking
+      de.chkal.prettytest.WelcomeBean
 		</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 
   <managed-bean>
-    <managed-bean-name>otherBean</managed-bean-name>
+    <managed-bean-name>someOtherBean</managed-bean-name>
     <managed-bean-class>
-      de.chkal.prettytest.OtherBean
+      de.chkal.prettytest.SomeOtherBean
     </managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
