@@ -2,25 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:pretty="http://ocpsoft.com/prettyfaces">
 	
 	<head>
-		<title>Hello World</title>
+		<title>Hello PrettyFaces</title>
 	</head>
 	<body>
 	<h:form id="form">
-		<h:panelGrid id="grid" columns="2">
 		
-			<h:messages />
-			
-			<h:outputText id="output1" value="Please enter your name" />
-			<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
+		<h:messages />
+		
+		<h:outputText id="output1" value="Please enter your name: " />
+		<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
+    
+		<h:commandButton value="Say Hello" action="pretty:greeting">
+		  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{greetingBean.name}"/>
+		</h:commandButton>
 
-			<h:commandButton value="press me" action="pretty:someOtherBean">
-			  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{someOtherBean.name}"/>
-			</h:commandButton>
-
-		</h:panelGrid>
 	</h:form>
 	</body>
 </html>

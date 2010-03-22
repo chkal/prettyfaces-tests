@@ -6,15 +6,17 @@
 	xmlns:pretty="http://ocpsoft.com/prettyfaces">
 	
 	<head>
-		<title>Hello World</title>
+		<title>Hello PrettyFaces</title>
 	</head>
 	<body>
-	
-		<h:outputText value="Hello #{someOtherBean.name}." />
+
+    <p>
+  		<h:outputText value="Hello #{greetingBean.name}" />
+    </p>	
 		
 		<!-- Go back but initialize inputText field with name -->
 		<pretty:link mappingId="welcome">
-		  <f:param name="name" value="#{someOtherBean.name}"/>
+		  <f:param name="name" value="#{greetingBean.name}"/>
 		  Go back
 		</pretty:link>
 

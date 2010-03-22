@@ -8,10 +8,12 @@ import com.ocpsoft.pretty.annotation.PrettyAction;
 import com.ocpsoft.pretty.annotation.PrettyBean;
 import com.ocpsoft.pretty.annotation.PrettyMapping;
 import com.ocpsoft.pretty.annotation.PrettyQueryParam;
+import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
 // Define the mapping
 @PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
-@PrettyBean("welcomeBean") // optional annotation! Could be removed!
+// optional @PrettyBean annotation! Could be removed!
+@PrettyBean("welcomeBean")
 public class WelcomeBean
 {
     private final static Log log = LogFactory.getLog(WelcomeBean.class);
@@ -19,15 +21,18 @@ public class WelcomeBean
     // Query parameter my be used to initialize this value
     @PrettyQueryParam(value = "name")
     private String name;
-    
+
     // Action called on GET request for /welcome
-    @PrettyAction(onPostback=false)
+    @PrettyAction(onPostback = false)
     public void start()
     {
-        log.info("start() method called by mapping: "+
-                PrettyContext.getCurrentInstance().getCurrentMapping().getId());
-        if(name != null) {
-            log.info("Name inputText was initialized with: "+name);
+        PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+
+        log.info("start() method called by mapping: " + mapping.getId());
+
+        if (name != null)
+        {
+            log.info("Name inputText was initialized with: " + name);
         }
     }
 
