@@ -2,6 +2,7 @@ package de.chkal.prettytest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
@@ -12,6 +13,7 @@ import com.ocpsoft.pretty.config.PrettyUrlMapping;
 @PrettyMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
 // Removed! We get it from faces-config.xml
 // @PrettyBean("greetingBean")
+@Component
 public class GreetingBean
 {
 
