@@ -2,18 +2,18 @@ package de.chkal.prettytest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyBean;
 import com.ocpsoft.pretty.annotation.PrettyMapping;
 import com.ocpsoft.pretty.annotation.PrettyQueryParam;
 import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
-// Define the mapping
+@Component
+@Scope("request")
 @PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
-// optional @PrettyBean annotation! Could be removed!
-@PrettyBean("welcomeBean")
 public class WelcomeBean
 {
     private final static Log log = LogFactory.getLog(WelcomeBean.class);

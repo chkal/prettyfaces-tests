@@ -2,12 +2,15 @@ package de.chkal.prettytest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
 import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
-// No annotations here
+@Component
+@Scope("request")
 public class WelcomeBean2 {
 
   private final static Log log = LogFactory.getLog(WelcomeBean2.class);

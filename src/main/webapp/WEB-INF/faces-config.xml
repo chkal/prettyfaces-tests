@@ -10,32 +10,6 @@
     <variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
   </application>
 
-  <managed-bean>
-    <managed-bean-name>welcomeBean</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.WelcomeBean
-		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-
-  <managed-bean>
-    <managed-bean-name>welcomeBean2</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.WelcomeBean2
-		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-
-<!-- 
-  <managed-bean>
-    <managed-bean-name>greetingBean</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.GreetingBean
-    </managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
- -->
-
   <navigation-rule>
     <from-view-id>/helloWorld.xhtml</from-view-id>
     <navigation-case>
