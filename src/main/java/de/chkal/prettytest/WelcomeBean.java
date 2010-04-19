@@ -13,7 +13,7 @@ import com.ocpsoft.pretty.config.PrettyUrlMapping;
 // Define the mapping
 @PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 // optional @PrettyBean annotation! Could be removed!
-@PrettyBean("welcomeBean")
+//@PrettyBean("welcomeBean")
 public class WelcomeBean
 {
     private final static Log log = LogFactory.getLog(WelcomeBean.class);
