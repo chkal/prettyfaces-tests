@@ -1,17 +1,21 @@
 package de.chkal.prettytest;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
+import com.ocpsoft.pretty.annotation.PrettyBean;
 import com.ocpsoft.pretty.annotation.PrettyMapping;
 import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
-// mapping for "/greeting/*"
+@Named
+@RequestScoped
+@PrettyBean("greetingBean")
 @PrettyMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
-// Removed! We get it from faces-config.xml
-// @PrettyBean("greetingBean")
 public class GreetingBean
 {
 
