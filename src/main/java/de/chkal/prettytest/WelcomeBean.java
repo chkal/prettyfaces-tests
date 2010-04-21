@@ -12,14 +12,12 @@ import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyBean;
 import com.ocpsoft.pretty.annotation.PrettyMapping;
 import com.ocpsoft.pretty.annotation.PrettyQueryParam;
 import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
 @Named
 @RequestScoped
-@PrettyBean("welcomeBean")
 @PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 public class WelcomeBean
 {
