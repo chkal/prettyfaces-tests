@@ -114,16 +114,28 @@
     </dependency>
     
     <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <version>1.0</version>
+      <groupId>org.apache.openwebbeans</groupId>
+      <artifactId>openwebbeans-jsf</artifactId>
+      <version>1.0.0-M4</version>
     </dependency>
 
     <dependency>
-      <groupId>org.jboss.weld.servlet</groupId>
-      <artifactId>weld-servlet</artifactId>
-      <version>1.0.1-CR2</version>
+      <groupId>org.apache.openwebbeans</groupId>
+      <artifactId>openwebbeans-impl</artifactId>
+      <version>1.0.0-M4</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.openwebbeans</groupId>
+      <artifactId>openwebbeans-spi</artifactId>
+      <version>1.0.0-M4</version>
+    </dependency>   
+
+<!--    <dependency>-->
+<!--      <groupId>org.apache.openwebbeans</groupId>-->
+<!--      <artifactId>openwebbeans-web</artifactId>-->
+<!--      <version>1.0.0-M4</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>javax.servlet</groupId>

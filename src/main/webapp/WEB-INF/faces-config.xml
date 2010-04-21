@@ -9,8 +9,8 @@
 <!--    <el-resolver>org.jboss.weld.el.WeldELResolver</el-resolver>-->
   </application>
   
-  <lifecycle>
-    <phase-listener>org.jboss.weld.jsf.WeldPhaseListener</phase-listener>
-  </lifecycle>
+<!--  <lifecycle>-->
+<!--    <phase-listener>org.jboss.weld.jsf.WeldPhaseListener</phase-listener>-->
+<!--  </lifecycle>-->
 
 </faces-config>
