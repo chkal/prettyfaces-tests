@@ -1,25 +1,19 @@
 package de.chkal.prettytest;
 
-import java.util.Enumeration;
-
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.ServletContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyBean;
 import com.ocpsoft.pretty.annotation.PrettyMapping;
 import com.ocpsoft.pretty.annotation.PrettyQueryParam;
 import com.ocpsoft.pretty.config.PrettyUrlMapping;
 
 @Named
 @RequestScoped
-@PrettyBean("welcomeBean")
 @PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 public class WelcomeBean
 {
@@ -29,22 +23,21 @@ public class WelcomeBean
     @PrettyQueryParam(value = "name")
     private String name;
 
-    @SuppressWarnings("unchecked")
     @PrettyAction
     public void debugServletContext() {
         
-        log.info("----------------------");
-        
-        ServletContext sc = 
-            (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-        Enumeration<String> enums = sc.getAttributeNames();
-        while (enums.hasMoreElements())
-        {
-            String key = enums.nextElement();
-            System.out.println("---> "+key+" = "+sc.getAttribute(key));
-        }
-        
-        log.info("----------------------");
+//        log.info("----------------------");
+//        
+//        ServletContext sc = 
+//            (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+//        Enumeration<String> enums = sc.getAttributeNames();
+//        while (enums.hasMoreElements())
+//        {
+//            String key = enums.nextElement();
+//            System.out.println("---> "+key+" = "+sc.getAttribute(key));
+//        }
+//        
+//        log.info("----------------------");
         
     }
     
