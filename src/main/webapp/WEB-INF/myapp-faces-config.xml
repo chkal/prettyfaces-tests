@@ -9,44 +9,4 @@
     <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
   </application>
 
-  <managed-bean>
-    <managed-bean-name>welcomeBean</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.WelcomeBean
-		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-
-  <managed-bean>
-    <managed-bean-name>welcomeBean2</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.WelcomeBean2
-		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-
-  <managed-bean>
-    <managed-bean-name>greetingBean</managed-bean-name>
-    <managed-bean-class>
-      de.chkal.prettytest.GreetingBean
-    </managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-
-  <navigation-rule>
-    <from-view-id>/helloWorld.xhtml</from-view-id>
-    <navigation-case>
-      <from-outcome>success</from-outcome>
-      <to-view-id>/page2.xhtml</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
-  <navigation-rule>
-    <from-view-id>/page2.xhtml</from-view-id>
-    <navigation-case>
-      <from-outcome>back</from-outcome>
-      <to-view-id>/helloWorld.xhtml</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
 </faces-config>
