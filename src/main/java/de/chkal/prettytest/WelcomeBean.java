@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyMapping;
-import com.ocpsoft.pretty.annotation.PrettyQueryParam;
-import com.ocpsoft.pretty.config.PrettyUrlMapping;
+import com.ocpsoft.pretty.faces.annotation.PrettyAction;
+import com.ocpsoft.pretty.faces.annotation.PrettyMapping;
+import com.ocpsoft.pretty.faces.annotation.PrettyQueryParam;
+import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @Component
 @Scope("request")
@@ -26,7 +26,7 @@ public class WelcomeBean
     @PrettyAction(onPostback = false)
     public void start()
     {
-        PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+        UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
 
         log.info("start() method called by mapping: " + mapping.getId());
 

@@ -114,11 +114,12 @@
     </dependency>
     
     <!-- PrettyFaces with annotations -->
-    <dependency>
-      <groupId>com.ocpsoft</groupId>
-      <artifactId>ocpsoft-pretty-faces</artifactId>
-      <version>1.2.7-SNAPSHOT</version>
-    </dependency>
+
+  <dependency>
+    <groupId>com.ocpsoft</groupId>
+    <artifactId>prettyfaces-jsf12</artifactId>
+    <version>3.0.2-SNAPSHOT</version>
+  </dependency>
 
   </dependencies>
   
