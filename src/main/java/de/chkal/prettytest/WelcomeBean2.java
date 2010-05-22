@@ -4,8 +4,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.config.PrettyUrlMapping;
+import com.ocpsoft.pretty.faces.annotation.PrettyAction;
+import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 // No annotations here
 public class WelcomeBean2 {
@@ -16,7 +16,7 @@ public class WelcomeBean2 {
   @PrettyAction(mappingId = "welcome", onPostback = false)
   public void otherAction() {
     
-    PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+    UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
     
     log.info("otherAction() called from mapping: "+mapping.getId());
     
