@@ -10,6 +10,7 @@ import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.PrettyAction;
 import com.ocpsoft.pretty.faces.annotation.PrettyMapping;
 import com.ocpsoft.pretty.faces.annotation.PrettyQueryParam;
+import com.ocpsoft.pretty.faces.annotation.PrettyValidation;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
@@ -21,6 +22,7 @@ public class WelcomeBean
 
     // Query parameter my be used to initialize this value
     @PrettyQueryParam(value = "name")
+    @PrettyValidation(validatorIds="myValidator")
     private String name;
 
     // Action called on GET request for /welcome

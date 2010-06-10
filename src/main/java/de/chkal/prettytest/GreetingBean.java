@@ -9,11 +9,18 @@ import org.apache.commons.logging.LogFactory;
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.PrettyAction;
 import com.ocpsoft.pretty.faces.annotation.PrettyMapping;
+import com.ocpsoft.pretty.faces.annotation.PrettyValidation;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
 @RequestScoped
-@PrettyMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
+@PrettyMapping(id = "greeting", 
+      pattern = "/greeting/#{greetingBean.name}", 
+      viewId = "/greeting.jsf", 
+      validation={ 
+         @PrettyValidation(index=0, validatorIds="myValidator") 
+      }
+)
 public class GreetingBean
 {
 
