@@ -35,6 +35,11 @@
     <param-value>/WEB-INF/myapp-faces-config.xml,fd</param-value>
   </context-param> 
 
+  <context-param>
+    <param-name>com.ocpsoft.pretty.BASE_PACKAGES</param-name>
+    <param-value>de.chkal</param-value>
+  </context-param> 
+
 	<context-param>
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
 		<param-value>.xhtml</param-value>

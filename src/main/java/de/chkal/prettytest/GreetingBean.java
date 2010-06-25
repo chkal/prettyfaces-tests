@@ -7,18 +7,18 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.faces.annotation.PrettyAction;
-import com.ocpsoft.pretty.faces.annotation.PrettyMapping;
-import com.ocpsoft.pretty.faces.annotation.PrettyValidation;
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import com.ocpsoft.pretty.faces.annotation.URLValidator;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
 @RequestScoped
-@PrettyMapping(id = "greeting", 
+@URLMapping(id = "greeting", 
       pattern = "/greeting/#{greetingBean.name}", 
       viewId = "/greeting.jsf", 
       validation={ 
-         @PrettyValidation(index=0, validatorIds="myValidator") 
+         @URLValidator(index=0, validatorIds="myValidator") 
       }
 )
 public class GreetingBean
@@ -30,7 +30,7 @@ public class GreetingBean
     private String name;
 
     // Called on request for /other-page/*
-    @PrettyAction
+    @URLAction
     public void showGreeting()
     {
 
