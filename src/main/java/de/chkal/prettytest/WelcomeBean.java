@@ -21,7 +21,7 @@ public class WelcomeBean
     private final static Log log = LogFactory.getLog(WelcomeBean.class);
 
     // Query parameter my be used to initialize this value
-    @URLQueryParameter(value = "name")
+    @URLQueryParameter("name")
     @URLValidator(validatorIds="myValidator")
     private String name;
 
