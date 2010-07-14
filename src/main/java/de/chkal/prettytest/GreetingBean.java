@@ -1,5 +1,7 @@
 package de.chkal.prettytest;
 
+import java.util.regex.Pattern;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -18,7 +20,7 @@ import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
       pattern = "/greeting/#{greetingBean.name}", 
       viewId = "/greeting.jsf", 
       validation={ 
-         @URLValidator(index=0, validatorIds="myValidator") 
+         @URLValidator(index=0, validator="#{welcomeBean.validateName}")
       }
 )
 public class GreetingBean
@@ -27,7 +29,7 @@ public class GreetingBean
     private final static Log log = LogFactory.getLog(GreetingBean.class);
 
     // gets initialized via URL pattern
-    private String name;
+    private Pattern name;
 
     // Called on request for /other-page/*
     @URLAction
@@ -39,15 +41,19 @@ public class GreetingBean
         log.info("showGreeting() called from mapping: " + mapping.getId());
 
         log.info("Bean got name: " + name);
+        
+        if(name.equals("test")) {
+           throw new IllegalStateException("Expected exception!");
+        }
 
     }
 
-    public String getName()
+    public Pattern getName()
     {
         return name;
     }
 
-    public void setName(String name)
+    public void setName(Pattern name)
     {
         this.name = name;
     }

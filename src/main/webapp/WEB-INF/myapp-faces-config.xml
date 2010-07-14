@@ -9,9 +9,4 @@
 <!--    <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>-->
 <!--  </application>-->
 
-  <validator>
-    <validator-id>myValidator</validator-id>
-    <validator-class>de.chkal.prettytest.MyValidator</validator-class>
-  </validator>
-
 </faces-config>
