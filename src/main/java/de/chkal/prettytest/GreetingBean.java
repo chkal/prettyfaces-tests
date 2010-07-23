@@ -1,7 +1,5 @@
 package de.chkal.prettytest;
 
-import java.util.regex.Pattern;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -29,7 +27,7 @@ public class GreetingBean
     private final static Log log = LogFactory.getLog(GreetingBean.class);
 
     // gets initialized via URL pattern
-    private Pattern name;
+    private String name;
 
     // Called on request for /other-page/*
     @URLAction
@@ -48,12 +46,12 @@ public class GreetingBean
 
     }
 
-    public Pattern getName()
+    public String getName()
     {
         return name;
     }
 
-    public void setName(Pattern name)
+    public void setName(String name)
     {
         this.name = name;
     }

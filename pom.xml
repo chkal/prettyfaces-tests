@@ -78,13 +78,6 @@
 
   <dependencies>
     
-    <!-- Facelets -->
-<!--    <dependency>-->
-<!--      <groupId>com.sun.facelets</groupId>-->
-<!--      <artifactId>jsf-facelets</artifactId>-->
-<!--      <version>1.1.15.B1</version>-->
-<!--    </dependency>-->
-
     <!-- Log4J without ugly dependencies -->
     <dependency>
       <groupId>log4j</groupId>
@@ -117,22 +110,10 @@
   
   <!-- Repository for current snapshots of PrettyFaces with annotation support -->
   <repositories>
-    <repository>
-        <id>pf-annotations-snapshots</id>
-        <url>http://www.kaltepoth.de/repos/prettyfaces/</url>
-        <releases>
-           <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>        
-     </repository>
-
      <repository>
         <id>jboss</id>
         <url>http://repository.jboss.com/maven2/</url>
      </repository>
-
   </repositories>
   
 </project>
