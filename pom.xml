@@ -116,30 +116,18 @@
     <!-- PrettyFaces with annotations -->
     <dependency>
       <groupId>com.ocpsoft</groupId>
-      <artifactId>ocpsoft-pretty-faces</artifactId>
-      <version>1.2.7-SNAPSHOT</version>
+      <artifactId>prettyfaces-jsf12</artifactId>
+      <version>3.0.2-SNAPSHOT</version>
     </dependency>
 
   </dependencies>
   
   <!-- Repository for current snapshots of PrettyFaces with annotation support -->
   <repositories>
-    <repository>
-        <id>pf-annotations-snapshots</id>
-        <url>http://www.kaltepoth.de/repos/prettyfaces/</url>
-        <releases>
-           <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>        
-     </repository>
-
      <repository>
         <id>jboss</id>
         <url>http://repository.jboss.com/maven2/</url>
      </repository>
-
   </repositories>
   
 </project>

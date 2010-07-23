@@ -10,20 +10,4 @@
     <variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
   </application>
 
-  <navigation-rule>
-    <from-view-id>/helloWorld.xhtml</from-view-id>
-    <navigation-case>
-      <from-outcome>success</from-outcome>
-      <to-view-id>/page2.xhtml</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
-  <navigation-rule>
-    <from-view-id>/page2.xhtml</from-view-id>
-    <navigation-case>
-      <from-outcome>back</from-outcome>
-      <to-view-id>/helloWorld.xhtml</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
 </faces-config>

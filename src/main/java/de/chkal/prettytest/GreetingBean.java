@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyMapping;
-import com.ocpsoft.pretty.config.PrettyUrlMapping;
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @Component
 @Scope("request")
-@PrettyMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
+@URLMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
 public class GreetingBean
 {
 
@@ -22,11 +22,11 @@ public class GreetingBean
     private String name;
 
     // Called on request for /other-page/*
-    @PrettyAction
+    @URLAction
     public void showGreeting()
     {
 
-        PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+        UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
 
         log.info("showGreeting() called from mapping: " + mapping.getId());
 

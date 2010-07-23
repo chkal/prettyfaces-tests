@@ -6,27 +6,27 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyMapping;
-import com.ocpsoft.pretty.annotation.PrettyQueryParam;
-import com.ocpsoft.pretty.config.PrettyUrlMapping;
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
+import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @Component
 @Scope("request")
-@PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
+@URLMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 public class WelcomeBean
 {
     private final static Log log = LogFactory.getLog(WelcomeBean.class);
 
     // Query parameter my be used to initialize this value
-    @PrettyQueryParam(value = "name")
+    @URLQueryParameter(value = "name")
     private String name;
 
     // Action called on GET request for /welcome
-    @PrettyAction(onPostback = false)
+    @URLAction(onPostback = false)
     public void start()
     {
-        PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+        UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
 
         log.info("start() method called by mapping: " + mapping.getId());
 
