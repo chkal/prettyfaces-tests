@@ -7,45 +7,27 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.annotation.PrettyAction;
-import com.ocpsoft.pretty.annotation.PrettyMapping;
-import com.ocpsoft.pretty.annotation.PrettyQueryParam;
-import com.ocpsoft.pretty.config.PrettyUrlMapping;
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
+import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @Named
 @RequestScoped
-@PrettyMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
+@URLMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 public class WelcomeBean
 {
     private final static Log log = LogFactory.getLog(WelcomeBean.class);
 
     // Query parameter my be used to initialize this value
-    @PrettyQueryParam(value = "name")
+    @URLQueryParameter(value = "name")
     private String name;
-
-    @PrettyAction
-    public void debugServletContext() {
-        
-//        log.info("----------------------");
-//        
-//        ServletContext sc = 
-//            (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-//        Enumeration<String> enums = sc.getAttributeNames();
-//        while (enums.hasMoreElements())
-//        {
-//            String key = enums.nextElement();
-//            System.out.println("---> "+key+" = "+sc.getAttribute(key));
-//        }
-//        
-//        log.info("----------------------");
-        
-    }
     
     // Action called on GET request for /welcome
-    @PrettyAction(onPostback = false)
+    @URLAction(onPostback = false)
     public void start()
     {
-        PrettyUrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+        UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
 
         log.info("start() method called by mapping: " + mapping.getId());
 

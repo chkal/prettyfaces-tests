@@ -4,11 +4,6 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
 	version="1.2"> 
 
-  <application>
-    <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
-<!--    <el-resolver>org.jboss.weld.el.WeldELResolver</el-resolver>-->
-  </application>
-  
   <lifecycle>
     <phase-listener>org.jboss.weld.jsf.WeldPhaseListener</phase-listener>
   </lifecycle>
