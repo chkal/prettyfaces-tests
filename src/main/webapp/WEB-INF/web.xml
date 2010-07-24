@@ -32,7 +32,7 @@
 
   <context-param>
     <param-name>javax.faces.CONFIG_FILES</param-name>
-    <param-value>/WEB-INF/myapp-faces-config.xml,fd</param-value>
+    <param-value>/WEB-INF/myapp-faces-config.xml</param-value>
   </context-param> 
 
   <context-param>
