@@ -36,48 +36,31 @@
       
     </plugins>
   </build>
-  
-  <profiles>
-  
-    <profile>
-      <id>jsfri</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-api</artifactId>
-          <version>1.2-b19</version>
-        </dependency>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-impl</artifactId>
-          <version>1.2-b19</version>
-        </dependency>      
-      </dependencies>
-    </profile>
-    
-    <profile>
-      <id>myfaces</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-api</artifactId>
-          <version>1.2.7</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-impl</artifactId>
-          <version>1.2.7</version>
-        </dependency>
-      </dependencies>
-    </profile>
-    
-  </profiles>
 
   <dependencies>
-    
+
+<!--  <dependency>-->
+<!--    <groupId>javax.faces</groupId>-->
+<!--    <artifactId>jsf-api</artifactId>-->
+<!--    <version>1.2-b19</version>-->
+<!--  </dependency>-->
+<!--  <dependency>-->
+<!--    <groupId>javax.faces</groupId>-->
+<!--    <artifactId>jsf-impl</artifactId>-->
+<!--    <version>1.2-b19</version>-->
+<!--  </dependency>-->
+
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-api</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-impl</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+  
     <!-- Facelets -->
     <dependency>
       <groupId>com.sun.facelets</groupId>
