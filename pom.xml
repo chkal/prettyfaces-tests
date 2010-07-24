@@ -36,47 +36,32 @@
       
     </plugins>
   </build>
-  
-  <profiles>
-  
-    <profile>
-      <id>jsfri</id>
-      <dependencies>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-api</artifactId>
-          <version>1.2-b19</version>
-        </dependency>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-impl</artifactId>
-          <version>1.2-b19</version>
-        </dependency>      
-      </dependencies>
-    </profile>
-    
-    <profile>
-      <id>myfaces</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-api</artifactId>
-          <version>2.0.0</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-impl</artifactId>
-          <version>2.0.0</version>
-        </dependency>
-      </dependencies>
-    </profile>
-    
-  </profiles>
 
   <dependencies>
+
+<!--    <dependency>-->
+<!--      <groupId>com.sun.faces</groupId>-->
+<!--      <artifactId>jsf-api</artifactId>-->
+<!--      <version>2.0.2</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.sun.faces</groupId>-->
+<!--      <artifactId>jsf-impl</artifactId>-->
+<!--      <version>2.0.2</version>-->
+<!--    </dependency>-->
+  
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-api</artifactId>
+      <version>2.0.1</version>
+<!--      <scope>provided</scope>-->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-impl</artifactId>
+      <version>2.0.1</version>
+<!--      <scope>provided</scope>-->
+    </dependency>
     
     <!-- Log4J without ugly dependencies -->
     <dependency>
@@ -113,6 +98,10 @@
      <repository>
         <id>jboss</id>
         <url>http://repository.jboss.com/maven2/</url>
+     </repository>
+     <repository>
+        <id>javanet</id>
+        <url>http://download.java.net/maven/2</url>
      </repository>
   </repositories>
   
