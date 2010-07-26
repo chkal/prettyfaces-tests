@@ -1,14 +1,15 @@
 package de.chkal.prettytest;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.ocpsoft.pretty.PrettyContext;
-import com.ocpsoft.pretty.faces.annotation.PrettyAction;
-import com.ocpsoft.pretty.faces.annotation.PrettyMapping;
+import com.ocpsoft.pretty.faces.annotation.URLAction;
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
-import com.sun.org.apache.commons.logging.Log;
-import com.sun.org.apache.commons.logging.LogFactory;
 
 // mapping for "/greeting/*"
-@PrettyMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
+@URLMapping(id = "greeting", pattern = "/greeting/#{greetingBean.name}", viewId = "/greeting.jsf")
 // Removed! We get it from faces-config.xml
 // @PrettyBean("greetingBean")
 public class GreetingBean
@@ -20,7 +21,7 @@ public class GreetingBean
     private String name;
 
     // Called on request for /other-page/*
-    @PrettyAction
+    @URLAction
     public void showGreeting()
     {
 

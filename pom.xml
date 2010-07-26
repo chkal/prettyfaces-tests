@@ -45,38 +45,40 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <dependencies>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-api</artifactId>
-          <version>1.2-b19</version>
-        </dependency>
-        <dependency>
-          <groupId>javax.faces</groupId>
-          <artifactId>jsf-impl</artifactId>
-          <version>1.2-b19</version>
-        </dependency>      
       </dependencies>
     </profile>
     
     <profile>
       <id>myfaces</id>
       <dependencies>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-api</artifactId>
-          <version>1.2.7</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.myfaces.core</groupId>
-          <artifactId>myfaces-impl</artifactId>
-          <version>1.2.7</version>
-        </dependency>
       </dependencies>
     </profile>
     
   </profiles>
 
   <dependencies>
+    
+<!--    <dependency>-->
+<!--      <groupId>javax.faces</groupId>-->
+<!--      <artifactId>jsf-api</artifactId>-->
+<!--      <version>1.2-b19</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>javax.faces</groupId>-->
+<!--      <artifactId>jsf-impl</artifactId>-->
+<!--      <version>1.2-b19</version>-->
+<!--    </dependency>      -->
+
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-api</artifactId>
+      <version>1.2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-impl</artifactId>
+      <version>1.2.7</version>
+    </dependency>
     
     <!-- Facelets -->
     <dependency>
@@ -117,22 +119,10 @@
   
   <!-- Repository for current snapshots of PrettyFaces with annotation support -->
   <repositories>
-    <repository>
-        <id>pf-annotations-snapshots</id>
-        <url>http://www.kaltepoth.de/repos/prettyfaces/</url>
-        <releases>
-           <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>        
-     </repository>
-
      <repository>
         <id>jboss</id>
         <url>http://repository.jboss.com/maven2/</url>
      </repository>
-
   </repositories>
   
 </project>
