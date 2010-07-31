@@ -1,11 +1,7 @@
 package de.chkal.prettytest;
 
-import java.util.Enumeration;
-
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.ServletContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -27,25 +23,6 @@ public class WelcomeBean
     @URLQueryParameter(value = "name")
     private String name;
 
-    @SuppressWarnings("unchecked")
-    @URLAction
-    public void debugServletContext() {
-        
-        log.info("----------------------");
-        
-        ServletContext sc = 
-            (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-        Enumeration<String> enums = sc.getAttributeNames();
-        while (enums.hasMoreElements())
-        {
-            String key = enums.nextElement();
-            System.out.println("---> "+key+" = "+sc.getAttribute(key));
-        }
-        
-        log.info("----------------------");
-        
-    }
-    
     // Action called on GET request for /welcome
     @URLAction(onPostback = false)
     public void start()
