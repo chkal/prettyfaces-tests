@@ -20,7 +20,6 @@ public class GreetingBean
     // gets initialized via URL pattern
     private String name;
 
-    // Called on request for /other-page/*
     @URLAction
     public void showGreeting()
     {
