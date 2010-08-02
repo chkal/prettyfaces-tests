@@ -26,10 +26,8 @@ public class GreetingBean
 
     private final static Log log = LogFactory.getLog(GreetingBean.class);
 
-    // gets initialized via URL pattern
     private String name;
 
-    // Called on request for /other-page/*
     @URLAction
     public void showGreeting()
     {
