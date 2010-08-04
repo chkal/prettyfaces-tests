@@ -1,0 +1,5 @@
+Example application for Tomcat 6.0 + JSF 2.0 + PrettyFaces 3.0.2-SNAPSHOT.
+
+Start:
+
+ $ mvn tomcat:run-war
