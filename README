@@ -1,5 +1,4 @@
-Example application for Tomcat 6.0 + MyFaces 2.0.1 + Weld (CDI) + PrettyFaces 3.0.2-SNAPSHOT.
+Example application for JEE6 Container + PrettyFaces 3.0.2-SNAPSHOT.
 
-Start:
+Works with JBoss 6.0.0.M4 and Glassfish3
 
- $ mvn tomcat:run-war
