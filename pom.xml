@@ -120,10 +120,26 @@
   </dependencies>
   
   <repositories>
-     <repository>
-        <id>jboss</id>
-        <url>http://repository.jboss.com/maven2/</url>
-     </repository>
+
+    <!-- PrettyFaces Repository -->
+    <repository>
+      <id>ocpsoft</id>
+      <name>OcpSoft</name>
+      <url>http://ocpsoft.com/repository/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <!-- JBoss -->
+    <repository>
+      <id>jboss</id>
+      <url>http://repository.jboss.com/maven2/</url>
+    </repository>
+
   </repositories>
   
 </project>
