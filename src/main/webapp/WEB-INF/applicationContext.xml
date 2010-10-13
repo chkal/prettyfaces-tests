@@ -7,6 +7,31 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
                
-     <context:component-scan base-package="de.chkal"/>
-     
+  <context:component-scan base-package="de.chkal"/>
+
+  <!-- 1. initialization of all orchestra modules (required for core15 module) -->
+  <import resource="classpath*:/META-INF/spring-orchestra-init.xml" />
+
+  <!-- 2. the conversation scopes -->
+  <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+    <property name="scopes">
+      <map>
+        <entry key="conversation.manual">
+          <bean
+            class="org.apache.myfaces.orchestra.conversation.spring.SpringConversationScope">
+            <property name="timeout" value="30" />
+          </bean>
+        </entry>
+
+        <entry key="conversation.access">
+          <bean
+            class="org.apache.myfaces.orchestra.conversation.spring.SpringConversationScope">
+            <property name="timeout" value="30" />
+            <property name="lifetime" value="access" />
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
 </beans>

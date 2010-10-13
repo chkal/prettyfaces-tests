@@ -89,6 +89,16 @@
       <artifactId>spring-web</artifactId>
       <version>3.0.0.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>3.0.0.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib-nodep</artifactId>
+      <version>2.1_3</version>
+    </dependency>
 
     <!-- Log4J without ugly dependencies -->
     <dependency>
@@ -116,6 +126,17 @@
       <artifactId>prettyfaces-jsf12</artifactId>
       <version>3.0.2-SNAPSHOT</version>
     </dependency>
+    
+    <dependency>
+      <groupId>org.apache.myfaces.orchestra</groupId>
+      <artifactId>myfaces-orchestra-core12</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-el</groupId>
+      <artifactId>commons-el</artifactId>
+      <version>1.0</version>
+    </dependency>    
 
   </dependencies>
   

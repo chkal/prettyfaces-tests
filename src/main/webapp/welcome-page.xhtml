@@ -16,9 +16,7 @@
 		<h:outputText id="output1" value="Please enter your name: " />
 		<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
     
-		<h:commandButton value="Say Hello" action="pretty:greeting">
-		  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{greetingBean.name}"/>
-		</h:commandButton>
+		<h:commandButton value="Say Hello" action="#{welcomeBean.action}"/>
 
 	</h:form>
 	</body>
