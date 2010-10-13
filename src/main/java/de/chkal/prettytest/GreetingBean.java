@@ -2,6 +2,7 @@ package de.chkal.prettytest;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.validation.constraints.Pattern;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -9,23 +10,20 @@ import org.apache.commons.logging.LogFactory;
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
-import com.ocpsoft.pretty.faces.annotation.URLValidator;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
 @RequestScoped
 @URLMapping(id = "greeting", 
       pattern = "/greeting/#{greetingBean.name}", 
-      viewId = "/greeting.jsf", 
-      validation={ 
-         @URLValidator(index=0, validator="#{welcomeBean.validateName}")
-      }
+      viewId = "/greeting.jsf"
 )
 public class GreetingBean
 {
 
     private final static Log log = LogFactory.getLog(GreetingBean.class);
 
+    @Pattern(regexp = "[a-z]{4}")
     private String name;
 
     @URLAction
