@@ -13,10 +13,13 @@
 		
 		<h:messages />
 		
-		<h:outputText id="output1" value="Please enter your name: " />
+        <p>
+          Click the button a few times without entering any data! 
+        </p>
+    
 		<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
     
-		<h:commandButton value="Say Hello" action="#{welcomeBean.action}"/>
+		<h:commandButton value="Click me" action="#{welcomeBean.action}"/>
 
 	</h:form>
 	</body>
