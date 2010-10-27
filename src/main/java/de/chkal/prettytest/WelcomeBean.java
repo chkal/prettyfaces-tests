@@ -1,63 +1,101 @@
 package de.chkal.prettytest;
 
-import javax.faces.application.FacesMessage;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.Rectangle;
+import java.awt.TexturePaint;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
-import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
-import com.ocpsoft.pretty.faces.annotation.URLValidator;
-import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
 @RequestScoped
-@URLMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
+@URLMapping(id = "emailImage", pattern = "/users/email/#{welcomeBean.username}.png", 
+      viewId = "/greeting.jsf")
 public class WelcomeBean
 {
-    private final static Log log = LogFactory.getLog(WelcomeBean.class);
+   private final static Log log = LogFactory.getLog(WelcomeBean.class);
 
-    // Query parameter my be used to initialize this value
-    @URLQueryParameter("name")
-    @URLValidator(validator="#{welcomeBean.validateName}")
-    private String name;
-    
-    public void validateName(FacesContext arg0, UIComponent arg1, Object arg2) 
-    {
-       if(arg2.toString().length() < 3) {
-          throw new ValidatorException( new FacesMessage("Not allowed"));
-       }
-    }
-    
-    // Action called on GET request for /welcome
-    @URLAction(onPostback = false)
-    public void start()
-    {
-        UrlMapping mapping = PrettyContext.getCurrentInstance().getCurrentMapping();
+   private String username;
 
-        log.info("start() method called by mapping: " + mapping.getId());
+   @URLAction
+   public void start() 
+   {
+      try
+      {
+      
+         String email = "test@bla.org";
+         byte[] imageData = createImage(150, 50, email);
+         
+         FacesContext context = FacesContext.getCurrentInstance();
+         HttpServletResponse response = (HttpServletResponse) context.getExternalContext().getResponse();
+      
+         response.setContentType("image/png");
+         response.getOutputStream().write(imageData);
+         
+         context.responseComplete();
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+      }
+      
+      
+   }
+   
+   public byte[] createImage(int width, int height, String s) {
+      
+      try {
 
-        if (name != null)
-        {
-            log.info("Name inputText was initialized with: " + name);
-        }
-    }
+         // create image to draw to
+         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+         Graphics2D graphics = image.createGraphics();
+         graphics.setPaint(Color.LIGHT_GRAY);
+         graphics.fillRect(0, 0, width, height);
+         
+         // write the text to the center of the image
+         int stringWidth = graphics.getFontMetrics().stringWidth(s);
+         int stringHeight = graphics.getFontMetrics().getAscent();
+         graphics.setPaint(Color.black);
+         graphics.rotate(0.08);
+         graphics.drawString(s, (width - stringWidth) / 2, height / 2 + stringHeight / 4);
+         
+         // create PNG
+         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+         ImageIO.write(image, "png", buffer);
+         return buffer.toByteArray();
+         
+      } catch (IOException e) {
+         throw new RuntimeException(e);
+      }
+ 
+      
+   }
 
-    public String getName()
-    {
-        return name;
-    }
+   public String getUsername()
+   {
+      return username;
+   }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
+   public void setUsername(String username)
+   {
+      this.username = username;
+   }
+
 
 }
