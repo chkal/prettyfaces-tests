@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:pretty="http://ocpsoft.com/prettyfaces">
+	
+	<head>
+		<title>Hello PrettyFaces</title>
+	</head>
+	<body>
+
+      <div style="margin: 100px;">
+      
+        <pretty:urlbuffer var="url" mappingId="barcode">
+          <f:param value="666666666666"/>
+        </pretty:urlbuffer>
+        
+        <img src="#{url}" alt="barcode"/>
+      
+      </div>
+    </body>
+
+</html>

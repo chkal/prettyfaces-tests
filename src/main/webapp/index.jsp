@@ -1,4 +1,4 @@
 
 <%
-    response.sendRedirect(request.getContextPath() + "/welcome");
+    response.sendRedirect(request.getContextPath() + "/start.jsf");
 %>
