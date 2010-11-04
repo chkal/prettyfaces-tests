@@ -9,7 +9,6 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.krysalis.barcode4j.impl.int2of5.Interleaved2Of5Bean;
-import org.krysalis.barcode4j.impl.upcean.EAN13Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 
 import com.ocpsoft.pretty.faces.annotation.URLAction;
@@ -17,46 +16,43 @@ import com.ocpsoft.pretty.faces.annotation.URLMapping;
 
 @ManagedBean
 @RequestScoped
-@URLMapping(id = "barcode", viewId = "/META-INF/MANIFEST.MF",
+@URLMapping(id = "barcode", viewId = "/empty.jsf", 
     pattern = "/barcode/#{ /[0-9]+/ barcodeBean.value }.png")
 public class BarcodeBean {
-  
+
   private String value;
 
   @URLAction
-  public void start() throws IOException
-  {
-    
-    System.out.println("........");
+  public void start() throws IOException {
 
-    // prepare to send PNG data to
+    // get HttpServletResponse
     FacesContext context = FacesContext.getCurrentInstance();
     HttpServletResponse response = 
       (HttpServletResponse) context.getExternalContext().getResponse();
+    
+    // set correct content type
     response.setContentType("image/png");
 
-    // setup CanvasProvider for rendering to a bitmap 
+    // setup CanvasProvider to render bitmap to response stream
     BitmapCanvasProvider canvas = new BitmapCanvasProvider(
-        response.getOutputStream(), "image/png", 150, 
+        response.getOutputStream(), "image/png", 150,
         BufferedImage.TYPE_BYTE_BINARY, false, 0);
 
-    // build barcode bean and render it
+    // render barcode
     Interleaved2Of5Bean barcode = new Interleaved2Of5Bean();
     barcode.generateBarcode(canvas, value);
-
-    // cleanup
     canvas.finish();
+
+    // mark response as completed
     context.responseComplete();
 
   }
 
-  public String getValue()
-  {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(String value)
-  {
+  public void setValue(String value) {
     this.value = value;
   }
 
