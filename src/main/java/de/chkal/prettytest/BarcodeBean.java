@@ -23,7 +23,7 @@ public class BarcodeBean {
   private String value;
 
   @URLAction
-  public void start() throws IOException {
+  public void render() throws IOException {
 
     // get HttpServletResponse
     FacesContext context = FacesContext.getCurrentInstance();
