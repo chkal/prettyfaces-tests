@@ -3,7 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:pretty="http://ocpsoft.com/prettyfaces">
+  xmlns:pretty="http://ocpsoft.com/prettyfaces"
+    xmlns:t="http://myfaces.apache.org/tomahawk">
 	
 	<head>
 		<title>Hello PrettyFaces</title>
@@ -12,14 +13,9 @@
 	<h:form id="form">
 		
 		<h:messages />
-		
-		<h:outputText id="output1" value="Please enter your name: " />
-		<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
     
-		<h:commandButton value="Say Hello" action="pretty:greeting">
-		  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{greetingBean.name}"/>
-		</h:commandButton>
-
+        <t:swapImage value="/images/prev.png"/>
+        
 	</h:form>
 	</body>
 </html>

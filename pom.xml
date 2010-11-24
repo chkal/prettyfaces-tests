@@ -107,7 +107,23 @@
     <dependency>
       <groupId>com.ocpsoft</groupId>
       <artifactId>prettyfaces-jsf12</artifactId>
-      <version>3.0.2-SNAPSHOT</version>
+      <version>3.1.1-SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.myfaces.tomahawk</groupId>
+      <artifactId>tomahawk</artifactId>
+      <version>1.1.9</version>
+      <exclusions>
+        <exclusion>
+          <groupId>oro</groupId>
+          <artifactId>oro</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.lowagie</groupId>
+          <artifactId>itext</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
   </dependencies>
