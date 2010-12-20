@@ -23,16 +23,29 @@
         <p>
           <pretty:link mappingId="welcome">
             <f:param name="name" value="上传文件"/>
-            Reload page and initialize input field with 上传文件
+            Encoding of query parameter
           </pretty:link>
         </p>
         
         <p>
           <pretty:link mappingId="greeting">
             <f:param value="上传文件"/>
-            Say hello to 上传文件
+            Encoding in path parameter
           </pretty:link>
         </p>
+        
+        <p>
+          <a href="#{request.contextPath}/rewrite/substitute">
+            Rewrite via substitute
+          </a>
+        </p>
+
+        <p>
+          <a href="#{request.contextPath}/rewrite/url">
+            Rewrite via full URL
+          </a>
+        </p>
+
 
 	</h:form>
 	</body>
