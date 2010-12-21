@@ -2,8 +2,10 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.1.1 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.1.1.xsd">
 
-   <rewrite match="/rewrite/substitute" substitute="/greeting/传文"/>
+   <rewrite match="^/rewrite/substitute$" substitute="/greeting/传文"/>
 
-   <rewrite match="/rewrite/url" url="/prettyfaces-demo/greeting/传文"/>
+   <rewrite match="^/rewrite/substitute/(.+)$" substitute="/welcome?name=$1"/>
+
+   <rewrite match="^/rewrite/url$" url="/prettyfaces-demo/greeting/传文"/>
 
 </pretty-config>
