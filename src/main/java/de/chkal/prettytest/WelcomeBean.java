@@ -1,11 +1,7 @@
 package de.chkal.prettytest;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,7 +10,6 @@ import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
-import com.ocpsoft.pretty.faces.annotation.URLValidator;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 
 @ManagedBean
@@ -26,15 +21,7 @@ public class WelcomeBean
 
     // Query parameter my be used to initialize this value
     @URLQueryParameter("name")
-    @URLValidator(validator="#{welcomeBean.validateName}")
     private String name;
-    
-    public void validateName(FacesContext arg0, UIComponent arg1, Object arg2) 
-    {
-       if(arg2.toString().length() < 3) {
-          throw new ValidatorException( new FacesMessage("Not allowed"));
-       }
-    }
     
     // Action called on GET request for /welcome
     @URLAction(onPostback = false)
