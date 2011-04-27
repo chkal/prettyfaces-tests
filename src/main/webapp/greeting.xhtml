@@ -14,11 +14,15 @@
   		<h:outputText value="Hello #{greetingBean.name}" />
     </p>	
 		
-		<!-- Go back but initialize inputText field with name -->
-		<pretty:link mappingId="welcome">
-		  <f:param name="name" value="#{greetingBean.name}"/>
-		  Go back
-		</pretty:link>
+    <p>
+
+<h:outputLink value="/welcome-page.jsf">
+  <f:param name="other" value="something"/>
+  <f:param name="name" value="Christian"/>
+  <h:outputText value="Details"/>
+</h:outputLink>
+    
+    </p>
 
 	</body>
 </html>

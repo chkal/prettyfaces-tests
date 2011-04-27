@@ -21,6 +21,18 @@ public class WelcomeBean
     @URLQueryParameter(value = "name")
     private String name;
 
+    // Query parameter my be used to initialize this value
+    @URLQueryParameter(value = "other")
+    private String other;
+    
+    public String getOther() {
+      return other;
+    }
+
+    public void setOther(String other) {
+      this.other = other;
+    }
+
     // Action called on GET request for /welcome
     @URLAction(onPostback = false)
     public void start()
@@ -29,10 +41,8 @@ public class WelcomeBean
 
         log.info("start() method called by mapping: " + mapping.getId());
 
-        if (name != null)
-        {
-            log.info("Name inputText was initialized with: " + name);
-        }
+        log.info("Name inputText was initialized with: " + name);
+        log.info("Other inputText was initialized with: " + other);
     }
 
     public String getName()
