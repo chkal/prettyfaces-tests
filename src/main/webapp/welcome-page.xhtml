@@ -3,7 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:pretty="http://ocpsoft.com/prettyfaces">
+  xmlns:pretty="http://ocpsoft.com/prettyfaces"
+  xmlns:s="http://jboss.org/seam/faces">
 	
 	<head>
 		<title>Hello PrettyFaces</title>
@@ -11,15 +12,27 @@
 	<body>
 	<h:form id="form">
 		
-		<h:messages />
+    
+		<h:messages globalOnly="true"/>
 		
-		<h:outputText id="output1" value="Please enter your name: " />
-		<h:inputText id="input1" value="#{welcomeBean.name}" required="true" />
+    <p>
+  		<h:outputText value="Please enter your name: " />
+  		<h:inputText id="name1" value="#{welcomeBean.name}" required="true" />
+      <h:message for="name1"/>
+    </p>
+    
+    <p>
+  		<h:outputText value="Please enter your name: " />
+  		<h:inputText id="name2" required="true" />
+      <h:message for="name2"/>
+    </p>
     
 		<h:commandButton value="Say Hello" action="pretty:greeting">
 		  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{greetingBean.name}"/>
 		</h:commandButton>
 
+    <s:validateForm validatorId="myVal" showFieldMessages="true"/>
+    
 	</h:form>
 	</body>
 </html>
