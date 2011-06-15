@@ -1,12 +1,7 @@
 package de.chkal.prettytest;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.Rectangle;
-import java.awt.TexturePaint;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,9 +12,6 @@ import javax.faces.context.FacesContext;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 
@@ -29,9 +21,8 @@ import com.ocpsoft.pretty.faces.annotation.URLMapping;
       viewId = "/greeting.jsf")
 public class WelcomeBean
 {
-   private final static Log log = LogFactory.getLog(WelcomeBean.class);
 
-   private String username;
+  private String username;
 
    @URLAction
    public void start() 
