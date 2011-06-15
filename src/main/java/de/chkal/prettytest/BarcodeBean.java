@@ -3,9 +3,9 @@ package de.chkal.prettytest;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.servlet.http.HttpServletResponse;
 
 import org.krysalis.barcode4j.impl.int2of5.Interleaved2Of5Bean;
@@ -14,7 +14,7 @@ import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 
-@ManagedBean
+@Named
 @RequestScoped
 @URLMapping(id = "barcode", viewId = "/empty.jsf", 
     pattern = "/barcode/#{ /[0-9]+/ barcodeBean.value }.png")

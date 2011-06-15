@@ -6,16 +6,16 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.imageio.ImageIO;
+import javax.inject.Named;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 
-@ManagedBean
+@Named
 @RequestScoped
 @URLMapping(id = "emailImage", pattern = "/users/email/#{welcomeBean.username}.png", 
       viewId = "/greeting.jsf")

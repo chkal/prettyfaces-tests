@@ -3,9 +3,9 @@ package de.chkal.prettytest;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.servlet.http.HttpServletResponse;
 
 import org.krysalis.barcode4j.impl.datamatrix.DataMatrixBean;
@@ -15,7 +15,7 @@ import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
 
-@ManagedBean
+@Named
 @RequestScoped
 @URLMapping(id = "qrCode", pattern = "/qr", viewId = "/greeting.jsf")
 public class CodeBean
