@@ -12,8 +12,12 @@
 
       <div style="margin: 100px;">
       
+        <p>
+          My barcode:
+        </p>
+        
         <pretty:urlbuffer var="url" mappingId="barcode">
-          <f:param value="666666666666"/>
+          <f:param value="123456789012"/>
         </pretty:urlbuffer>
         
         <img src="#{url}" alt="barcode"/>
