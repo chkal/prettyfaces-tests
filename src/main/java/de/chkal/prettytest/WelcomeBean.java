@@ -3,14 +3,13 @@ package de.chkal.prettytest;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
 import com.ocpsoft.pretty.faces.annotation.URLQueryParameter;
 import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
+import com.ocpsoft.shade.org.apache.commons.logging.Log;
+import com.ocpsoft.shade.org.apache.commons.logging.LogFactory;
 
 @ManagedBean
 @RequestScoped

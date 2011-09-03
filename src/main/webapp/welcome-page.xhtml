@@ -19,6 +19,13 @@
 		<h:commandButton value="Say Hello" action="pretty:greeting">
 		  <f:setPropertyActionListener value="#{welcomeBean.name}" target="#{greetingBean.name}"/>
 		</h:commandButton>
+        
+        <p>
+          <pretty:link mappingId="greeting">
+            <f:param value="ab cd"/>
+            Space character in path parameter
+          </pretty:link>
+        </p>
     
         <p>
           <pretty:link mappingId="welcome">
@@ -26,7 +33,6 @@
             Encoding of query parameter
           </pretty:link>
         </p>
-        
         <p>
           <pretty:link mappingId="greeting">
             <f:param value="上传文件"/>
