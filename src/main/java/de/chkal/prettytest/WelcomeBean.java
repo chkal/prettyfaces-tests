@@ -3,8 +3,7 @@ package de.chkal.prettytest;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
@@ -17,7 +16,7 @@ import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 @URLMapping(id = "welcome", pattern = "/welcome", viewId = "/welcome-page.jsf")
 public class WelcomeBean
 {
-    private final static Log log = LogFactory.getLog(WelcomeBean.class);
+    private final static Logger log = Logger.getLogger(WelcomeBean.class);
 
     // Query parameter my be used to initialize this value
     @URLQueryParameter("name")

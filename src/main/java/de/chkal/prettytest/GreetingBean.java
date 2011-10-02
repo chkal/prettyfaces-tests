@@ -3,8 +3,7 @@ package de.chkal.prettytest;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import com.ocpsoft.pretty.PrettyContext;
 import com.ocpsoft.pretty.faces.annotation.URLAction;
@@ -20,7 +19,7 @@ import com.ocpsoft.pretty.faces.config.mapping.UrlMapping;
 public class GreetingBean
 {
 
-    private final static Log log = LogFactory.getLog(GreetingBean.class);
+    private final static Logger log = Logger.getLogger(GreetingBean.class);
 
     private String name;
 
